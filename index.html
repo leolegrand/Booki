@@ -29,7 +29,7 @@
         <a href="#">Activités</a>
       </nav>
     </header>
-    <section role="search">
+    <section class="search" role="search">
       <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
       <p>En plein centre-ville ou en pleine nature</p>
       <form action="" class="searchbar">
@@ -45,16 +45,29 @@
           <span>Rechercher</span><i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
-      <div>
+      <div class="filters">
         <h3>Filtres</h3>
-        <ul>
-          <li>Economique</li>
-          <li>Familial</li>
-          <li>Romantique</li>
-          <li>Animaux autorisés</li>
+        <ul class="filters__list">
+          <li>
+            <button><i class="fas fa-money-bill-wave"></i>Economique</button>
+          </li>
+          <li>
+            <button><i class="fa-solid fa-person"></i>Familial</button>
+          </li>
+          <li>
+            <button><i class="fa-solid fa-heart"></i>Romantique</button>
+          </li>
+          <li>
+            <button><i class="fa-solid fa-dog"></i>Animaux autorisés</button>
+          </li>
         </ul>
       </div>
-      <p>Plus de 500 logements sont disponibles dans cette ville</p>
+      <div class="search__results">
+        <div class="search__results__icon">
+          <i class="fa-solid fa-info"></i>
+        </div>
+        <p>Plus de 500 logements sont disponibles dans cette ville</p>
+      </div>
     </section>
   </body>
 </html>
