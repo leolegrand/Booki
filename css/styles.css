@@ -133,7 +133,7 @@ a {
   justify-content: center;
   align-items: center;
   min-width: 50px;
-  min-height: 50px;
+  min-height: 50.28px;
   border-radius: 15px 0px 0px 15px;
   background-color: var(--background-color);
 }
@@ -204,7 +204,6 @@ input:focus::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
     transform: translateX(-13px);
   }
   .searchbar button svg {
@@ -287,4 +286,75 @@ input:focus::placeholder {
 
   width: 4px;
   height: 10px;
+}
+
+/* -- ||  MAIN || -- */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.lodging {
+  width: 60%;
+}
+
+.popular {
+  width: 30%;
+}
+
+.popular > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popular > div svg {
+  width: 15px;
+  color: #0065fc;
+}
+
+.lodging,
+.popular {
+  border-radius: 28px;
+  padding: 1.5rem;
+  background-color: var(--background-color);
+}
+
+.activities {
+  background-color: orange;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .main-row {
+    flex-direction: column;
+  }
+  .lodging {
+    width: 100%;
+  }
+
+  .popular {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lodging {
+    background-color: white;
+    width: 100%;
+  }
+
+  .popular {
+    width: 100%;
+  }
+  .main-row {
+    flex-direction: column-reverse;
+  }
 }
