@@ -325,9 +325,8 @@ input:focus::placeholder {
   background-color: var(--background-color);
 }
 
-.activities {
-  background-color: orange;
-  width: 100%;
+.activities h3 {
+  font-size: 1.4rem;
 }
 
 .popular__header {
@@ -362,7 +361,7 @@ input:focus::placeholder {
   width: 100%;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 
   gap: 10px;
@@ -389,12 +388,11 @@ input:focus::placeholder {
 .card {
   display: flex;
   background-color: white;
-
-  border-radius: 25px;
   box-shadow: 3px 3px 10px 5px #d1d1d1a1;
+  border-radius: 25px;
 }
 
-.card:hover img {
+main a:hover img {
   opacity: 0.8;
 }
 
@@ -467,8 +465,65 @@ input:focus::placeholder {
   gap: 5px;
 }
 
+.activities {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.activities-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 445px;
+}
+
+.activity {
+  border-radius: 20px;
+  width: 22%;
+  background-color: white;
+  box-shadow: 3px 3px 10px 5px #d1d1d1a1;
+}
+
+.activity img {
+  border-radius: 15px 15px 0px 0px;
+  object-fit: cover;
+  height: 85%;
+  width: 100%;
+}
+
+.activity h4 {
+  padding: 1em;
+}
+
+footer {
+  margin-top: 30px;
+  background-color: var(--background-color);
+  padding: 45px 70px;
+}
+
+footer nav {
+  width: 100%;
+  display: flex;
+  gap: 10vw;
+}
+
+footer nav h5 {
+  font-size: 1.1rem;
+
+  margin-bottom: 1rem;
+}
+
+footer nav ul {
+  list-style: none;
+}
+
+footer nav ul li {
+  margin-top: 0.5em;
+  font-size: 1rem;
+}
+
 /* Breakpoint tablet */
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
   .main-row {
     flex-direction: column;
   }
@@ -482,16 +537,26 @@ input:focus::placeholder {
   .popular-container {
     flex-wrap: nowrap;
   }
+  .activities-container {
+    height: 265px;
+  }
+  .activity img {
+    height: 75%;
+  }
+  .activity h4 {
+    padding: 0.5em 1em;
+  }
 }
 
-/* Breakpoint mobile */
 @media screen and (max-width: 767px) {
   .lodging {
     background-color: white;
     width: 100%;
     padding: 20px;
   }
-
+  .lodging button {
+    display: none;
+  }
   .lodging-container {
     flex-direction: column;
   }
@@ -507,5 +572,25 @@ input:focus::placeholder {
   }
   .main-row {
     flex-direction: column-reverse;
+  }
+  .activities {
+    padding: 20px;
+  }
+  .activities-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .activity {
+    height: 200px;
+    width: 100%;
+  }
+  .activity img {
+    height: 75%;
+  }
+  footer {
+    padding: 45px 30px;
+  }
+  footer nav {
+    flex-direction: column;
   }
 }
