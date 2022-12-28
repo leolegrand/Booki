@@ -27,7 +27,7 @@
 }
 
 body {
-  max-width: 1400px;
+  max-width: calc(1400px + 2 * var(--body-padding-sides));
   margin: auto;
   padding: var(--body-padding-top) var(--body-padding-sides) 0
     var(--body-padding-sides);
@@ -290,6 +290,8 @@ input:focus::placeholder {
 
 /* -- ||  MAIN || -- */
 
+/* LAYOUT  */
+
 .main {
   display: flex;
   flex-direction: column;
@@ -298,32 +300,28 @@ input:focus::placeholder {
 
 .main-row {
   display: flex;
-  gap: 40px;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .lodging {
-  width: 60%;
-}
+  width: 66%;
 
-.popular {
-  width: 30%;
-}
-
-.popular > div {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
+  gap: 2em;
 }
-.popular > div svg {
-  width: 15px;
-  color: #0065fc;
+
+.lodging h3 {
+  font-size: 1.4rem;
 }
 
 .lodging,
 .popular {
   border-radius: 28px;
-  padding: 1.5rem;
+  padding: 40px;
   background-color: var(--background-color);
 }
 
@@ -332,7 +330,145 @@ input:focus::placeholder {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+.popular__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.popular__header svg {
+  width: 15px;
+  color: #0065fc;
+}
+
+.lodging__show-more {
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+}
+
+.stars svg {
+  margin-right: 1px;
+  width: 12px;
+  color: var(--main-color);
+}
+
+.stars svg:last-child {
+  color: #f2f2f2;
+}
+
+.lodging-container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.popular {
+  width: 30%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  gap: 30px;
+}
+
+.popular-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  display: flex;
+  background-color: white;
+
+  border-radius: 25px;
+  box-shadow: 3px 3px 10px 5px #d1d1d1a1;
+}
+
+.card:hover img {
+  opacity: 0.8;
+}
+
+.card a {
+  padding: 5px;
+  width: 100%;
+
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card p {
+  font-size: 0.8rem;
+}
+
+.card__body--lodging {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: space-around;
+}
+
+.card--lodging {
+  width: 30%;
+  max-height: 190px;
+}
+
+.card--lodging a {
+  flex-direction: column;
+}
+
+.card--lodging img {
+  object-fit: cover;
+  border-radius: 20px 20px 0px 0px;
+  height: 58%;
+  max-height: 125px;
+}
+
+.card--popular {
+  height: 145px;
+  width: 100%;
+}
+
+.card--popular a {
+  gap: 5px;
+  flex-direction: row;
+}
+
+.card--popular img {
+  object-fit: cover;
+  border-radius: 20px 0px 0px 20px;
+  width: 40%;
+}
+
+.card__body {
+  padding: 0.5rem;
+}
+
+.card--popular__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card--popular__body__description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Breakpoint tablet */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .main-row {
     flex-direction: column;
   }
@@ -343,15 +479,30 @@ input:focus::placeholder {
   .popular {
     width: 100%;
   }
+  .popular-container {
+    flex-wrap: nowrap;
+  }
 }
 
+/* Breakpoint mobile */
 @media screen and (max-width: 767px) {
   .lodging {
     background-color: white;
     width: 100%;
+    padding: 20px;
+  }
+
+  .lodging-container {
+    flex-direction: column;
+  }
+
+  .card--lodging {
+    width: 100%;
   }
 
   .popular {
+    padding: 20px;
+    border-radius: 0;
     width: 100%;
   }
   .main-row {
