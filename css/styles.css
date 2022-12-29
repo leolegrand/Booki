@@ -1,27 +1,11 @@
-/* MOBILE */
-@media screen and (max-width: 767px) {
-}
-
-/* TABLET */
-@media screen and (min-width: 768px) and (max-width: 992px) {
-}
-/* DESKTOP */
-
-@media screen and (min-width: 992px) and (max-width: 1400px) {
-}
-
 * {
   --main-color: #0065fc;
   --secondary-color: #deebff;
   --background-color: #f2f2f2;
-
   --body-padding-top: 40px;
   --body-padding-sides: 50px;
-
   font-family: 'Raleway', sans-serif;
-
   box-sizing: border-box;
-
   padding: 0;
   margin: 0;
 }
@@ -33,15 +17,17 @@ body {
     var(--body-padding-sides);
 }
 
-@media screen and (max-width: 767px) {
-  body {
-    padding: 0;
-  }
-}
-
 a {
   color: black;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  object-fit: cover;
 }
 
 /* -- ||  HEADER  || -- */
@@ -79,48 +65,11 @@ a {
   height: 2px;
 }
 
-/* Breakpoint mobile */
-@media screen and (max-width: 767px) {
-  .main-header {
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .main-header nav {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    position: relative;
-  }
-
-  .main-header nav a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .main-header nav:before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    background-color: var(--background-color);
-    width: 100vw;
-    height: 2px;
-    bottom: 0px;
-  }
-  .main-header nav a:hover:after {
-    height: 3px;
-    top: 58px;
-    width: 100%;
-  }
-}
-
 /* -- ||  SECTION SEARCH || -- */
 
 .search h2 {
   margin-bottom: 0.5em;
 }
-
-/* SEARCHBAR */
 
 .searchbar {
   display: flex;
@@ -187,42 +136,6 @@ input:focus::placeholder {
   transform: scale(1.15);
 }
 
-/* Breakpoint mobile */
-@media screen and (max-width: 767px) {
-  .search {
-    padding: 0 1.25em;
-  }
-
-  .searchbar {
-    justify-content: center;
-    margin: 2.25em auto;
-  }
-
-  .searchbar button {
-    min-width: 50px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(-13px);
-  }
-  .searchbar button svg {
-    display: block;
-  }
-  .searchbar button span {
-    display: none;
-  }
-}
-
-/* Breakpoint tablet */
-@media screen and (min-width: 992px) {
-  .search h2 {
-    margin-bottom: 0.35em;
-  }
-}
-
-/* FILTERS */
-
 .filters {
   display: flex;
   align-items: baseline;
@@ -234,19 +147,15 @@ input:focus::placeholder {
   display: flex;
   flex-wrap: wrap;
   gap: 1.3rem;
-  list-style: none;
 }
 
 .filters__list li button {
   cursor: pointer;
   padding: 0.6em 1em;
-
   background-color: white;
-
   border: 2px solid #d9d9d9;
   border-radius: 25px;
   vertical-align: baseline;
-
   font-weight: 700;
   transition: 400ms;
 }
@@ -261,8 +170,6 @@ input:focus::placeholder {
   color: var(--main-color);
 }
 
-/* SEARCH RESULTS  */
-
 .search__results {
   margin: 2em auto;
   display: flex;
@@ -275,7 +182,6 @@ input:focus::placeholder {
   width: 24px;
   border-radius: 50%;
   border: 1px solid #d9d9d9;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,14 +189,11 @@ input:focus::placeholder {
 
 .search__results svg {
   color: var(--main-color);
-
   width: 4px;
   height: 10px;
 }
 
 /* -- ||  MAIN || -- */
-
-/* LAYOUT  */
 
 .main {
   display: flex;
@@ -306,7 +209,6 @@ input:focus::placeholder {
 
 .lodging {
   width: 66%;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -314,7 +216,8 @@ input:focus::placeholder {
   gap: 2em;
 }
 
-.lodging h3 {
+.lodging h3,
+.activities h3 {
   font-size: 1.4rem;
 }
 
@@ -323,10 +226,6 @@ input:focus::placeholder {
   border-radius: 28px;
   padding: 40px;
   background-color: var(--background-color);
-}
-
-.activities h3 {
-  font-size: 1.4rem;
 }
 
 .popular__header {
@@ -345,6 +244,9 @@ input:focus::placeholder {
   border: none;
   font-weight: 700;
 }
+.lodging__show-more:hover {
+  color: var(--main-color);
+}
 
 .stars svg {
   margin-right: 1px;
@@ -359,21 +261,17 @@ input:focus::placeholder {
 .lodging-container {
   height: 100%;
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
   gap: 10px;
 }
 
 .popular {
   width: 30%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   gap: 30px;
 }
 
@@ -388,8 +286,14 @@ input:focus::placeholder {
 .card {
   display: flex;
   background-color: white;
-  box-shadow: 3px 3px 10px 5px #d1d1d1a1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 25px;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover,
+.activity:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 main a:hover img {
@@ -399,7 +303,6 @@ main a:hover img {
 .card a {
   padding: 5px;
   width: 100%;
-
   display: flex;
   border-radius: 20px;
   overflow: hidden;
@@ -414,7 +317,6 @@ main a:hover img {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: space-around;
 }
 
 .card--lodging {
@@ -427,7 +329,6 @@ main a:hover img {
 }
 
 .card--lodging img {
-  object-fit: cover;
   border-radius: 20px 20px 0px 0px;
   height: 58%;
   max-height: 125px;
@@ -444,7 +345,6 @@ main a:hover img {
 }
 
 .card--popular img {
-  object-fit: cover;
   border-radius: 20px 0px 0px 20px;
   width: 40%;
 }
@@ -481,12 +381,12 @@ main a:hover img {
   border-radius: 20px;
   width: 22%;
   background-color: white;
-  box-shadow: 3px 3px 10px 5px #d1d1d1a1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
 .activity img {
   border-radius: 15px 15px 0px 0px;
-  object-fit: cover;
   height: 85%;
   width: 100%;
 }
@@ -494,6 +394,8 @@ main a:hover img {
 .activity h4 {
   padding: 1em;
 }
+
+/* -- ||  FOOTER || -- */
 
 footer {
   margin-top: 30px;
@@ -509,12 +411,7 @@ footer nav {
 
 footer nav h5 {
   font-size: 1.1rem;
-
   margin-bottom: 1rem;
-}
-
-footer nav ul {
-  list-style: none;
 }
 
 footer nav ul li {
@@ -522,18 +419,23 @@ footer nav ul li {
   font-size: 1rem;
 }
 
-/* Breakpoint tablet */
+footer a:hover {
+  color: var(--main-color);
+}
+
+/* -- ||  BREAKPOINT TABLET || -- */
 @media screen and (min-width: 768px) and (max-width: 992px) {
+  .search h2 {
+    margin-bottom: 0.35em;
+  }
   .main-row {
     flex-direction: column;
   }
-  .lodging {
-    width: 100%;
-  }
-
+  .lodging,
   .popular {
     width: 100%;
   }
+
   .popular-container {
     flex-wrap: nowrap;
   }
@@ -548,45 +450,109 @@ footer nav ul li {
   }
 }
 
-@media screen and (max-width: 767px) {
+/* -- ||  BREAKPOINT MOBILE || -- */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  /* section search */
+  .search {
+    padding: 0 1.25em;
+  }
+
+  .searchbar {
+    justify-content: center;
+    margin: 2.25em auto;
+  }
+
+  .searchbar button {
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-13px);
+  }
+  .searchbar button svg {
+    display: block;
+  }
+  .searchbar button span {
+    display: none;
+  }
+
+  /* header */
+  .main-header {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .main-header nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+  }
+
+  .main-header nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-header nav:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    background-color: var(--background-color);
+    width: 100vw;
+    height: 2px;
+    bottom: 0px;
+  }
+  .main-header nav a:hover:after {
+    height: 3px;
+    top: 58px;
+    width: 100%;
+  }
+
+  /* main */
   .lodging {
     background-color: white;
-    width: 100%;
-    padding: 20px;
   }
   .lodging button {
     display: none;
   }
-  .lodging-container {
+  .lodging-container,
+  .activities-container {
     flex-direction: column;
   }
 
-  .card--lodging {
+  .card--lodging,
+  .activity,
+  .popular,
+  .lodging {
     width: 100%;
   }
 
   .popular {
-    padding: 20px;
     border-radius: 0;
-    width: 100%;
   }
   .main-row {
     flex-direction: column-reverse;
   }
-  .activities {
+  .activities,
+  .popular,
+  .lodging {
     padding: 20px;
   }
   .activities-container {
-    flex-direction: column;
     height: auto;
   }
   .activity {
     height: 200px;
-    width: 100%;
   }
   .activity img {
     height: 75%;
   }
+  /* footer */
   footer {
     padding: 45px 30px;
   }
