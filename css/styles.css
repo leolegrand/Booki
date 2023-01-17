@@ -406,7 +406,7 @@ footer {
 footer nav {
   width: 100%;
   display: flex;
-  gap: 10vw;
+  gap: 15vw;
 }
 
 footer nav h5 {
